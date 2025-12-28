@@ -1,1 +1,36 @@
-websora-ai-services-frontend/ 
+# Logs
+*.log
+Debug/debug.log
+
+# Environment Variables
+.env
+
+# Node Modules
+node_modules/
+
+# Python Bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual Environment
+*env/
+
+# MyPy and Pytest
+.mypy_cache/
+.pytest_cache/
+app1.py
+websora-ai-services-frontend/
+
+# IDE and Editor-specific
+*.swp
+.vscode/
+.idea/
+
+# Build and Distribution
+build/
+dist/
+*.egg-info/
+
+#Vulnerable Files
+.DS_Store
