@@ -1,0 +1,7 @@
+services:
+  ai-worker:
+    env_file:
+      - .env.production
+    volumes:
+    # Override the .env mount to use .env.testing instead
+    - ./.env.production:/app/.env

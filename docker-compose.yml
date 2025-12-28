@@ -1,0 +1,16 @@
+services:
+  ai-worker:
+    build: .
+    container_name: ai-worker-fastapi
+    ports:
+      - "8000:8000"
+    environment:
+      - .env
+    volumes:
+      # Mount local directory for development (optional)
+      - ./app.py:/app/app.py
+      - ./auth.py:/app/auth.py
+      - ./rate_limiter.py:/app/rate_limiter.py
+    restart: unless-stopped
+     # Override command for development with reload
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
