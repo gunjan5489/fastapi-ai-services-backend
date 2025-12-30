@@ -1,6 +1,6 @@
-# WebSora AI Worker - AI-Powered DOM Analysis & Localization API
+# AI Worker - AI-Powered DOM Analysis & Localization API
 
-A comprehensive FastAPI service that leverages Google Gemini models to provide intelligent DOM analysis, translation, and image localization capabilities for the WebSora platform. Features API key authentication and rate limiting for production use.
+A comprehensive FastAPI service that leverages Google Gemini models to provide intelligent DOM analysis, translation, and image localization capabilities. Features API key authentication and rate limiting for production use.
 
 ## 🚀 Features
 
@@ -30,7 +30,7 @@ A comprehensive FastAPI service that leverages Google Gemini models to provide i
 ## 🗂️ Project Structure
 
 ```
-websora-ai-worker/
+ai-worker/
 ├── src/
 │   ├── .env.development          # Development environment variables
 │   ├── .env.testing              # Testing environment variables
@@ -55,7 +55,7 @@ websora-ai-worker/
 
 ```bash
 git clone <repository-url>
-cd websora-ai-worker/src
+cd ai-worker/src
 ```
 
 ### 2. Create Virtual Environment
@@ -138,10 +138,10 @@ uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 
 ```bash
 # Build the image
-docker build -t websora-ai-worker:latest .
+docker build -t ai-worker:latest .
 
 # Run with environment file
-docker run -d --name websora-ai-worker -p 8000:8000 --env-file .env websora-ai-worker:latest
+docker run -d --name ai-worker -p 8000:8000 --env-file .env ai-worker:latest
 ```
 
 #### Using Docker Compose
@@ -315,7 +315,7 @@ logs/
 
 ```bash
 # Docker logs
-docker logs websora-ai-worker -f
+docker logs ai-worker -f
 
 # Local log files
 tail -f logs/log_$(date +%Y-%m-%d).txt
@@ -379,8 +379,8 @@ Set AWS credentials via:
 
 ```
 ┌─────────────┐       ┌──────────────┐     ┌─────────────┐
-│   Client    │───▶   │  FastAPI     │───▶ │  Gemini     │
-│  (WebSora)  │◀───   │   Server     │◀─── │    API      │
+│   Client    │───▶   │  FastAPI     │───▶│  Gemini     │
+│(Streamlit)  │◀───   │   Server     │◀───│    API      │
 └─────────────┘       └──────────────┘     └─────────────┘
                            │    │
                            │    └──────────▶ ┌─────────────┐
